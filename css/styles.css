@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.bluebg {
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,0) 0%, rgba(9,52,103,1) 28%);
+}
+
+.hero1 {
+    background-image: url("/img/background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+h1,
+h3 {
+    font-family: "Dancing Script", cursive;
+}
+
+.cost {
+    font-family: "Special Elite", system-ui;
+}
+
+ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+li {
+    padding-left: 1em;
+    text-indent: -1em;
+}
+
+li:before {
+    content: "✔";
+    padding-right: 5px;
+}
+li.disabled:before {
+    content: "✘";
+    color: red;
+}
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.animate-marquee {
+    display: inline-block;
+    animation: marquee 15s linear infinite;
+}
+
+.demo-header {
+    background-image: url("/img/restaurante.jpeg");
+    background-size: cover;
+    background-position: center;
+}

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrankMenu - Tienda Demo</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scripts/tailwind.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        const NAME = "MoreBar"
+        const PLAN = "Pro";
+        const LOCATION = "Independencia y Mitre"
+        const CITY = "Sgo Capital"
+        const NUMBER = "3854997974"
+        const LOC_URL = "https://www.google.com/maps?q=-27.7911062,-64.2557446"
+        const LOGO_URL = "https://i.postimg.cc/yxLCfGWw/more-bar.png"
+
+        const horario = {
+            1: { // Lunes
+                turnoMañana: { apertura: '07:00', cierre: '12:00' },
+                turnoTarde: { apertura: '17:00', cierre: '21:00' }
+            },
+            2: { // Martes
+                turnoMañana: { apertura: '07:00', cierre: '12:00' },
+                turnoTarde: { apertura: '17:00', cierre: '21:00' }
+            },
+            3: { // Miércoles
+                turnoMañana: { apertura: '07:00', cierre: '12:00' },
+                turnoTarde: { apertura: '17:00', cierre: '21:00' }
+            },
+            4: { // Jueves
+                turnoMañana: { apertura: '07:00', cierre: '12:00' },
+                turnoTarde: { apertura: '17:00', cierre: '21:00' }
+            },
+            5: { // Viernes
+                turnoMañana: { apertura: '07:00', cierre: '12:00' },
+                turnoTarde: { apertura: '17:00', cierre: '21:00' }
+            },
+            6: { // Sábado
+                turnoMañana: { apertura: '07:00', cierre: '12:00' },
+                turnoTarde: { apertura: '07:00', cierre: '12:00' }
+            },
+            0: null // Domingo cerrado
+        };
+    </script>
+    <script src="scripts/menu.js"></script>
+    <script src="scripts/items.js" e-id="114qlzkIEt3u9b0oc9uVEGeDdsvRqpCCxElWbqvPCoQY"></script>
+    <script src="scripts/cart.js"></script>
+</head>
+
+<body class="bg-gray-950">
+    <nav class="bg-gray-200 py-2 text-center text-black">
+        <p>Powered by <a href="index.html"
+                class="text-secondary border-b border-transparent hover:border-secondary">FrankMenu.</a></p>
+    </nav>
+    <header class="relative h-[320px] bg-cover bg-center bg-[url('img/restaurante.jpeg')]">
+        <div class="absolute inset-0 bg-black bg-opacity-10 backdrop-blur-sm"></div>
+
+        <div class="relative flex flex-col items-center justify-center h-full text-white">
+            <img id="logo" alt="" class="size-[100px]">
+            <div class="flex flex-col justify-center">
+                <div class="flex items-center gap-2 mx-auto">
+                    <ion-icon name="location-outline"></ion-icon>
+                    <a id="location"></a>
+                </div>
+                <div class="flex items-center gap-2 mx-auto">
+                    <ion-icon name="time-outline"></ion-icon>
+                    <p id="localTime"></p>
+                </div>
+                <p class="mx-auto my-2 py-1 px-4 rounded-md text-xs uppercase font-bold" id="localStatus"></p>
+            </div>
+            <div class="my-2 flex flex-col md:flex-row gap-2">
+                <div
+                    class="flex justify-center items-center gap-2 uppercase text-sm font-semibold py-1 px-3 bg-yellow-500 rounded-full">
+                    <ion-icon name="restaurant-outline"></ion-icon>
+                    <p>En el lugar</p>
+                </div>
+                <div
+                    class="flex justify-center items-center gap-2 uppercase text-sm font-semibold py-1 px-3 bg-yellow-500 rounded-full">
+                    <ion-icon name="car-sport-outline"></ion-icon>
+                    <p>Para llevar</p>
+                </div>
+                <div
+                    class="flex justify-center items-center gap-2 uppercase text-sm font-semibold py-1 px-3 bg-yellow-500 rounded-full">
+                    <ion-icon name="bicycle-outline"></ion-icon>
+                    <p>Delivery</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-3 bg-gray-200 flex items-center justify-center gap-5 mb-2">
+        <div id="itemsBtn" onclick="displayItems()"
+            class="flex gap-2 py-1 px-3 bg-primary rounded-md items-center text-secondary font-semibold hover:text-secondary cursor-pointer">
+            <ion-icon name="list-outline"></ion-icon>
+            <p>Productos</p>
+        </div>
+        <div id="cartBtn" onclick="displayCart()"
+            class="hidden flex gap-2 py-1 px-3 rounded-md items-center text-primary font-semibold hover:text-secondary cursor-pointer">
+            <ion-icon name="cart-outline"></ion-icon>
+            <p>Carrito</p>
+        </div>
+    </section>
+
+    <section class="flex flex-col justify-center items-center max-w-[80%] mx-auto">
+        <div class="space-x-3 space-y-2" id="items-header">
+            <button onclick="displaySection('ALL')" class="py-1 px-5 text-white bg-red-700 rounded-full font-semibold hover:bg-red-800">Todos</button>
+        </div>
+        <section id="items-section" class="my-5 space-y-5">
+
+        </section>
+    </section>
+
+    <section class="flex flex-col w-full" id="itemsSection"></section>
+
+    <section id="cart" class="flex hidden flex-col max-w-[90%] mx-auto justify-center items-center pt-10">
+        <div id="cart-empty" class="hidden text-2xl text-red-600 flex flex-col items-center gap-2">
+            <ion-icon name="cart" class="text-9xl"></ion-icon>
+            <p class="text-white">Tu carrito está vacío.</p>
+        </div>
+        <div id="cart-full" class="md:max-w-[80%] w-full">
+            <div class="text-xl flex justify-center items-center gap-2 mb-2 text-white">
+                <ion-icon name="cart-outline"></ion-icon>
+                <p>Productos de tu carrito.</p>
+            </div>
+            <div class="p-5 rounded-md flex flex-col gap-1" id="cart-items">
+            </div>
+            <div class="p-5 flex flex-col md:flex-row justify-between md:items-center gap-5 text-white">
+                <div>
+                    <p><span id="cart-size"></span> en tu carrito.</p>
+                    <p class="text-2xl">Total a pagar: <span class="font-bold" id="total-cost">$0</span></p>
+                </div>
+                <a onclick="openConfirmMenu()"
+                    class="cursor-pointer bg-green-600 hover:bg-green-700 py-1 px-6 text-white text-xl rounded-md text-center">Confirmar
+                    pedido</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="overlay" class="hidden fixed inset-0 bg-black opacity-50"></div>
+    <div id="menu" class="hidden fixed inset-0 flex items-center justify-center z-50">
+        <div class="bg-white p-6 rounded shadow-lg w-full md:w-2/5">
+            <div class="flex items-center justify-between">
+                <h2 class="text-lg font-bold">Completar formulario.</h2>
+                <ion-icon id="closeMenu" name="close"
+                    class="text-2xl bg-red-500 p-1 hover:bg-red-600 cursor-pointer text-white"></ion-icon>
+            </div>
+            <div class="my-5 space-y-5">
+                <div class="flex items-center gap-2 border border-gray-600 p-1 rounded-md">
+                    <ion-icon name="person" class="px-1 text-xl"></ion-icon>
+                    <input id="order-fullname" type="text" placeholder="Nombre Completo" class="w-full outline-none"
+                        required>
+                </div>
+                <div>
+                    <p>Seleccionar opción</p>
+                    <select id="send-method" class="w-full outline-none border border-gray-600 p-1 rounded-md">
+                        <option value="Consumir en Local">Consumir en Local</option>
+                        <option value="Retiro por Local">Retiro por local</option>
+                        <option value="Enviar a Domicilio">Enviar a domicilio</option>
+                    </select>
+                </div>
+                <div>
+                    <p>Seleccionar método de pago</p>
+                    <select name="" id="payment-method"
+                        class="w-full outline-none border border-gray-600 p-1 rounded-md">
+                        <option value="Efectivo">Efectivo</option>
+                        <option value="Transferencia">Transferencia</option>
+                    </select>
+                </div>
+                <div id="home-info" class="hidden">
+                    <p>Datos de tu domicilio</p>
+                    <div class="flex items-center gap-2 w-full my-1">
+                        <input id="home-street" type="text" placeholder="Calle" class="p-1 w-full">
+                        <input id="home-num" type="number" placeholder="Número" class="p-1 w-full">
+                    </div>
+                    <textarea name="" id="home-info-extra" class="w-full p-2 resize-none" rows="1"
+                        placeholder="Dato extra de tu domicilio"></textarea>
+                </div>
+                <div>
+                    <p>Dato extra</p>
+                    <textarea name="" id="order-info" class="w-full p-2 resize-none" rows="2"
+                        placeholder="Comentarios"></textarea>
+                </div>
+                <a type="submit" onclick="orderMessage()" id="confirm-order"
+                    class="cursor-pointer flex items-center justify-center gap-2 bg-green-500 text-white font-bold py-2">
+                    <ion-icon name="send"></ion-icon>
+                    Enviar pedido</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

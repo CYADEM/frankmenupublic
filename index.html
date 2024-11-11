@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrankMenu - Tu tienda en línea</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <meta name="description" content="FrankMenu ofrece soluciones digitales innovadoras para restaurantes, bares y negocios, transformando tu menú con tecnología de Código QR. Mejora la experiencia de tus clientes y optimiza tus ventas.">
+    <meta property="og:title" content="FrankMenu - Tu tienda en línea">
+    <meta property="og:description" content="Descubre cómo FrankMenu puede digitalizar tu menú y mejorar la experiencia de tus clientes con nuestro sistema de Código QR.">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="scripts/tailwind.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="bg-red-500 text-white text-center py-3 overflow-hidden">
+        <div class="animate-marquee whitespace-nowrap">
+            <span class="font-semibold mx-4">¡Descuento imperdible en tu próxima compra! Solo hasta el 20-11-24, ¡no te
+                lo pierdas!</span>
+        </div>
+    </div>
+    <div class="min-h-screen bluebg flex flex-col">
+        <header class="py-1 px-4 bg-primary">
+            <div class="flex items-center justify-between max-w-[90%] md:max-w-[80%] mx-auto">
+                <div class="flex items-center space-x-1">
+                    <img src="img/logo-nn.png" alt="Logo de FrankMenu" class="max-w-[80px]">
+                    <div class="text-white">
+                        <p class="text-2xl"><span class="text-secondary">Frank</span>Menu</p>
+                        <p>Tu tienda en línea.</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-5 items-center text-xl text-white">
+                    <a href="#about"
+                        class="py-1 px-1 border-b border-primary delay-150 hover:border-secondary hover:text-secondary relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:origin-left after:h-[1px] after:bottom-0 after:left-0 after:bg-secondary after:transition-transform after:duration-300 hover:after:scale-x-100">Nosotros</a>
+                    <a href="#cost"
+                        class="py-1 px-1 border-b border-primary delay-150 hover:border-secondary hover:text-secondary relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:origin-left after:h-[1px] after:bottom-0 after:left-0 after:bg-secondary after:transition-transform after:duration-300 hover:after:scale-x-100">Precios</a>
+                    <a href="#demo"
+                        class="py-1 px-1 border-b border-primary delay-150 hover:border-secondary hover:text-secondary relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:origin-left after:h-[1px] after:bottom-0 after:left-0 after:bg-secondary after:transition-transform after:duration-300 hover:after:scale-x-100">Demo</a>
+                    <a href="" class="py-1 px-4 bg-secondary hover:text-primary rounded-md">Adquirir</a>
+                </div>
+                <div class="md:hidden text-3xl text-secondary">
+                    <ion-icon name="menu-outline" id="header-btn"></ion-icon>
+                </div>
+            </div>
+            <div class="hidden md:hidden flex max-w-[90%] mx-auto text-center pb-10" id="mobile-btns">
+                <div class="flex flex-col mx-auto text-white text-xl gap-2">
+                    <a href="#about">Nosotros</a>
+                    <a href="#cost">Precios</a>
+                    <a href="#demo">Demo</a>
+                    <a href="" class="py-1 px-4 bg-secondary rounded-md">Adquirir</a>
+                </div>
+            </div>
+        </header>
+        <div class="m-auto max-w-[90%] md:max-w-[80%] md:mx-auto">
+            <div class="flex justify-center mb-2">
+                <p class="pb-1 px-4 text-center text-white border-b border-secondary">Tu tienda en línea.</p>
+
+            </div>
+            <h1 class="text-6xl md:text-7xl text-secondary">Digitaliza tu menú hoy</h1>
+            <div class="flex flex-col items-center mt-5 text-white">
+                <p>Ofrece una experiencia única a tus clientes con menús digitales.</p>
+                <div class="mt-2 space-x-3">
+                    <a href="#about"
+                        class="text-primary bg-secondary hover:text-secondary hover:bg-transparent py-1 px-4 rounded-md border border-secondary md:border-primary hover:border-secondary">¿Quienes
+                        somos?</a>
+                    <a href="#cost"
+                        class="text-secondary border border-secondary rounded-md hover:bg-secondary hover:text-primary py-1 px-4">Contactar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="about" class="py-20 max-w-[90%] md:max-w-[80%] mx-auto">
+        <h3 class="text-center text-6xl text-primary">Sobre Nosotros</h3>
+        <div class="max-w-[90%] md:max-w-[60%] mx-auto mt-5 text-center text-xl">
+            <p>"En Aridi Services, desde Santiago del Estero, ofrecemos soluciones digitales que permiten a
+                restaurantes, bares y negocios mostrar su menú con un Código QR. Simplifica la experiencia de tus
+                clientes con nuestro sistema innovador y eficiente."</p>
+        </div>
+    </section>
+
+    <section id="demo" class="py-20 max-w-[90%] md:max-w-[80%] mx-auto">
+        <h3 class="text-center text-6xl text-primary">Tienda Demo</h3>
+        <div class="max-w-[90%] md:max-w-[60%] mx-auto mt-5 text-center text-xl">
+            <p>Obtené tu <span class="font-bold">prueba gratuita</span> durante <span class="font-bold">7 días</span>.
+                <br>Envíanos un mensaje privado a través de nuestro Whatsapp.
+            </p>
+        </div>
+        <div class="flex flex-col md:flex-row justify-center items-center mt-5 gap-5">
+            <a href="demo.html"
+                class="flex items-center gap-2 py-1 px-6 bg-gray-100 uppercase font-semibold text-primary border border-primary rounded-md hover:bg-gray-200"><ion-icon
+                    name="desktop-outline" class="text-xl"></ion-icon>Ver Demo</a>
+            <a href="https://walink.co/eaf120" target="_blank"
+                class="flex items-center gap-2 py-1 px-6 bg-gray-100 uppercase font-semibold text-primary border border-primary rounded-md hover:bg-gray-200"><ion-icon
+                    name="chatbubble-outline" class="text-xl"></ion-icon>Obtener Prueba</a>
+        </div>
+    </section>
+
+    <section id="cost" class="py-20 max-w-[90%] md:max-w-[80%] mx-auto">
+        <h3 class="text-center text-6xl text-primary">Precios</h3>
+        <p class="text-center">Los mejores planes con los mejores precios.</p>
+        <div class="mt-5 grid md:grid-cols-3 gap-5">
+            <div class="border-[2px] border-primary rounded-md">
+                <div class="pt-5 text-gray-800">
+                    <h4 class="text-xl text-center font-bold mt-2">Plan Básico</h4>
+                    <p class="text-center mt-1 text-sm">Perfecto para negocios chicos.</p>
+                    <div class="my-5 pb-10 border-b border-primary text-center">
+                        <p class="uppercase text-2xl">ARS <span class="text-6xl font-bold">1.999</span> <span
+                                class="text-sm lowercase">/ mes</span></p>
+                    </div>
+                </div>
+                <ul class="px-5 text-xl py-5 space-y-2">
+                    <li>Tienda personalizada</li>
+                    <li>Hasta 20 productos</li>
+                    <li>Dirección web exclusiva</li>
+                    <li>Sistema de Código QR</li>
+                    <li class="disabled">Carrito de compras</li>
+                    <li class="disabled">Gestión de stock</li>
+                    <li class="disabled">Prioridad en soporte</li>
+                    <li class="disabled">Publicidad en web oficial</li>
+                </ul>
+                <div class="flex justify-center max-w-[80%] mx-auto pb-6">
+                    <a id="básico-btn"
+                        class="flex items-center justify-center gap-2 py-2 px-3 bg-blue-600 hover:bg-blue-700 w-full text-white uppercase rounded-md cursor-pointer font-bold">
+                        <ion-icon name="cart-outline" class="font-bold text-2xl"></ion-icon>
+                        Adquirir
+                    </a>
+                </div>
+            </div>
+            <div class="border-[2px] border-primary rounded-md">
+                <div class="bg-blue-600 py-3 text-white border-b border-white bg-primary">
+                    <div class="flex mb-2">
+                        <p class="text-center bg-green-500 mx-auto text-xs uppercase py-1 px-3 rounded-full">Recomendado
+                        </p>
+                    </div>
+                    <h4 class="text-xl text-center font-bold">Plan Profesional</h4>
+                    <p class="text-center mt-1 text-sm">Plan completo para ventas.</p>
+                    <div class="my-5 pb-2 text-center text-white">
+                        <p class="uppercase text-2xl">ARS <span class="text-6xl font-bold">2.999</span> <span
+                                class="text-sm lowercase text-gray-100">/ mes</span></p>
+                    </div>
+                </div>
+                <ul class="px-5 text-xl py-5 space-y-2">
+                    <li>Tienda personalizada</li>
+                    <li>Productos ilimitados</li>
+                    <li>Dirección web exclusiva</li>
+                    <li>Sistema de Código QR</li>
+                    <li>Carrito de compras</li>
+                    <li class="disabled">Gestión de stock</li>
+                    <li class="disabled">Prioridad en soporte</li>
+                    <li class="disabled">Publicidad en web oficial</li>
+                </ul>
+                <div class="flex justify-center max-w-[80%] mx-auto pb-6">
+                    <a id="pro-btn"
+                        class="flex items-center justify-center gap-2 py-2 px-3 bg-blue-600 hover:bg-blue-700 w-full text-white uppercase rounded-md cursor-pointer font-bold">
+                        <ion-icon name="cart-outline" class="font-bold text-2xl"></ion-icon>
+                        Adquirir
+                    </a>
+                </div>
+            </div>
+            <div class="border-[2px] border-primary rounded-md">
+                <div class="pt-5 text-gray-800">
+                    <h4 class="text-xl text-center font-bold mt-2">Plan Premium</h4>
+                    <p class="text-center mt-1 text-sm">Perfecto para restaurante, bares.</p>
+                    <div class="my-5 pb-10 border-b border-primary text-center">
+                        <p class="uppercase text-2xl">ARS <span class="text-6xl font-bold">3.999</span> <span
+                                class="text-sm lowercase">/ mes</span></p>
+                    </div>
+                </div>
+                <ul class="px-8 text-xl py-5 space-y-2">
+                    <li>Tienda personalizada</li>
+                    <li>Productos ilimitados</li>
+                    <li>Dirección web exclusiva</li>
+                    <li>Sistema de Código QR</li>
+                    <li>Carrito de compras</li>
+                    <li>Gestión de stock</li>
+                    <li>Prioridad en soporte</li>
+                    <li>Publicidad en web oficial</li>
+                </ul>
+                <div class="flex justify-center max-w-[80%] mx-auto pb-6">
+                    <a id="premium-btn"
+                        class="flex items-center justify-center gap-2 py-2 px-3 bg-blue-600 hover:bg-blue-700 w-full text-white uppercase rounded-md cursor-pointer font-bold">
+                        <ion-icon name="cart-outline" class="font-bold text-2xl"></ion-icon>
+                        Adquirir
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary py-10">
+        <div class="max-w-[90%] md:max-w-[80%] mx-auto text-white">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-3xl font-semibold mb-4">Sobre Nosotros</h3>
+                    <p class="text-gray-400">Somos Aridi Services, una empresa de Santiago del Estero dedicada a ofrecer
+                        soluciones digitales modernas, incluyendo menús interactivos para restaurantes, bares y cafés a
+                        través de un sistema de Código QR personalizado.</p>
+                </div>
+                <div>
+                    <h3 class="font-semibold mb-4 text-3xl">Planes</h3>
+                    <div class="flex flex-col">
+                        <a href="#cost" class="text-gray-400 hover:text-white">Plan Básico</a>
+                        <a href="#cost" class="text-gray-400 hover:text-white">Plan Pro</a>
+                        <a href="#cost" class="text-gray-400 hover:text-white">Plan Premium</a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-semibold mb-4">Contacto</h3>
+                    <div>
+                        <p>Teléfono: <a href="tel:+543854769930" class="text-gray-400 hover:text-white">+54 385 476
+                                9930</a></p>
+                        <p>Email: <a href="mailto:franklinmendieta02@gmail.com"
+                                class="text-gray-400 hover:text-white">franklinmendieta02@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 border-t border-gray-700 pt-4 text-center">
+                <p>&copy; 2024 Aridi Services. Todos los derechos reservados.</p>
+                <p>Desarrollado por <a href="https://tinchx.netlify.app" target="_blank" class="text-secondary">Martin
+                        Mendieta</a>.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
